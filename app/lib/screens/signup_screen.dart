@@ -41,7 +41,7 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/signup_image.png', // Replace with your asset path
+                    'assets/signup_image.png', 
                     height: 200,
                   ),
                   const SizedBox(height: 10),
@@ -177,7 +177,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 20),
 
-            // SignUp Button
+            
             SizedBox(
               width: double.infinity,
               height: 50,
@@ -198,7 +198,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 child: const Text(
                   'SignUp',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16,color: Colors.white),
                 ),
               ),
             ),

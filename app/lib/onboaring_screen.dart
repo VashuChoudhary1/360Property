@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   controller: _controller,
                   count: 3,
                   effect: const WormEffect(
-                    activeDotColor: const Color(0xFFFF0000),
+                    activeDotColor: Color(0xFFFF0000),
                     dotHeight: 8,
                     dotWidth: 8,
                   ),

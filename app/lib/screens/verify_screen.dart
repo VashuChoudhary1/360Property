@@ -14,7 +14,7 @@ class VerifyScreen extends StatelessWidget {
             // Top Illustration
             Expanded(
               flex: 4,
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Image.asset(
                   'assets/login_bg.png', // Use the same background as login screen

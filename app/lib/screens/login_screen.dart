@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
             // Top Illustration
             Expanded(
               flex: 4,
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Image.asset(
                   'assets/login_bg.png',
@@ -152,7 +152,7 @@ class LoginScreen extends StatelessWidget {
                                     ));
                               },
                               child: Text(
-                                " Sign up",
+                                " Sign Up",
                                 style: GoogleFonts.poppins(
                                   color: const Color(0xFFFF0000),
                                   fontSize: 12,
