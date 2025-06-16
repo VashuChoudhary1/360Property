@@ -38,8 +38,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               OnboardPage(image: 'assets/village.png'),
             ],
           ),
-
-          // Top Row (Brand & Skip)
           Positioned(
             top: 50,
             left: 20,
@@ -65,7 +63,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
-          // Title above the dots
           Positioned(
             bottom: 110,
             left: 20,
@@ -81,7 +78,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
-          // Dot Indicator + Button
           Positioned(
             bottom: 30,
             left: 0,
@@ -160,7 +156,6 @@ class OnboardPage extends StatelessWidget {
   }
 }
 
-// Dummy next screen
 class NextScreen extends StatelessWidget {
   const NextScreen({super.key});
 

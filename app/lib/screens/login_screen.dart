@@ -16,7 +16,6 @@ class LoginScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Top Illustration
             Expanded(
               flex: 4,
               child: SizedBox(
@@ -116,7 +115,6 @@ class LoginScreen extends StatelessWidget {
 
                       const SizedBox(height: 8),
 
-                      // Google & Apple Buttons
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController circleToRectController;
   late Animation<double> widthAnimation;
   late Animation<double> heightAnimation;
-  late Animation<BorderRadius?> borderRadiusAnimation; // fixed type
+  late Animation<BorderRadius?> borderRadiusAnimation; 
 
   late AnimationController houseController;
   late Animation<Offset> houseAnimation;
@@ -104,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen>
         builder: (context, child) {
           return Stack(
             children: [
-              // Red background expanding
+             
               Center(
                 child: Container(
                   width: widthAnimation.value,

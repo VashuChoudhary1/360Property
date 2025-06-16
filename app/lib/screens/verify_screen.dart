@@ -113,7 +113,6 @@ class VerifyScreen extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    // Verify Button
                     SizedBox(
                       width: double.infinity,
                       height: 50,
@@ -125,7 +124,6 @@ class VerifyScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          // Next action here
                         },
                         child: Text(
                           'Verify',

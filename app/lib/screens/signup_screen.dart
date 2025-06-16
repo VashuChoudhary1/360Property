@@ -84,7 +84,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 16),
 
-            // Phone
+           
             const Text(
               'Phone Number',
               style: TextStyle(
@@ -114,7 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 20),
 
-            // Role Selection
+           
             const Text(
               'Getting started? Choose your role:',
               style: TextStyle(
@@ -142,7 +142,6 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 20),
 
-            // Terms
             Row(
               children: [
                 Checkbox(
