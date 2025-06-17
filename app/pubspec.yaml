@@ -70,6 +70,7 @@ flutter:
    - assets/login_bg.png
    - assets/Whatsapp.png
    - assets/devicon_google.png
+   - assets/sign_up.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
