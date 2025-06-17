@@ -71,6 +71,7 @@ flutter:
    - assets/Whatsapp.png
    - assets/devicon_google.png
    - assets/sign_up.png
+   - assets/verify_screen.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

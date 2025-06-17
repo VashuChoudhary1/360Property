@@ -53,7 +53,6 @@ class _SignupScreenState extends State<SignupScreen> {
                         height: 200,
                       ),
                     ),
-                    const SizedBox(height: 10),
                     SingleChildScrollView(
                       child:Container(
                           width: double.infinity,

@@ -1,5 +1,5 @@
-import 'package:app/screens/signup_screen.dart';
-import 'package:app/screens/verify_screen.dart';
+import 'package:app/Login_screens/signup_screen.dart';
+import 'package:app/Login_screens/verify_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../widgets/custom_textfield.dart';
