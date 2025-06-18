@@ -72,6 +72,14 @@ flutter:
    - assets/devicon_google.png
    - assets/sign_up.png
    - assets/verify_screen.png
+   - assets/home_assets/home_icon.png
+   - assets/home_assets/agriculture_icon.png
+   - assets/home_assets/commercial_icon.png
+   - assets/home_assets/filter_icon.png
+   - assets/home_assets/location_icon.png
+   - assets/home_assets/profile_icon.png
+   - assets/home_assets/post_icon.png
+   - assets/home_assets/house_img.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
