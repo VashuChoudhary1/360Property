@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
-  const CustomBottomNavBar({super.key});
+  final int currentIndex;
+  final Function(int) onTabSelected;
+
+  const CustomBottomNavBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTabSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +20,32 @@ class CustomBottomNavBar extends StatelessWidget {
         height: 60,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            BottomNavItem(icon: Icons.home, label: "Home"),
-            BottomNavItem(icon: Icons.article, label: "News"),
-            SizedBox(width: 30), // Space for FAB
-            BottomNavItem(icon: Icons.favorite, label: "Saved"),
-            BottomNavItem(icon: Icons.menu_book, label: "Guide"),
+          children: [
+            BottomNavItem(
+              icon: Icons.home,
+              label: "Home",
+              isSelected: currentIndex == 0,
+              onTap: () => onTabSelected(0),
+            ),
+            BottomNavItem(
+              icon: Icons.article,
+              label: "News",
+              isSelected: currentIndex == 1,
+              onTap: () => onTabSelected(1),
+            ),
+            const SizedBox(width: 30), // Space for FAB
+            BottomNavItem(
+              icon: Icons.favorite,
+              label: "Saved",
+              isSelected: currentIndex == 2,
+              onTap: () => onTabSelected(2),
+            ),
+            BottomNavItem(
+              icon: Icons.menu_book,
+              label: "Guide",
+              isSelected: currentIndex == 3,
+              onTap: () => onTabSelected(3),
+            ),
           ],
         ),
       ),
@@ -29,16 +56,34 @@ class CustomBottomNavBar extends StatelessWidget {
 class BottomNavItem extends StatelessWidget {
   final IconData icon;
   final String label;
-  const BottomNavItem({super.key, required this.icon, required this.label});
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const BottomNavItem({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: Colors.white),
-        Text(label, style: const TextStyle(color: Colors.white, fontSize: 12))
-      ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: isSelected ? Colors.red : Colors.white),
+          Text(
+            label,
+            style: TextStyle(
+              color: isSelected ? Colors.red : Colors.white,
+              fontSize: 12,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

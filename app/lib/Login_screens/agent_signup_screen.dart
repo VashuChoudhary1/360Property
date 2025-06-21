@@ -1,4 +1,3 @@
-import 'package:app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class AgentSignupScreen extends StatefulWidget {

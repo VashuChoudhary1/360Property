@@ -80,6 +80,13 @@ flutter:
    - assets/home_assets/profile_icon.png
    - assets/home_assets/post_icon.png
    - assets/home_assets/house_img.png
+   - assets/home_assets/home_card1.png
+   - assets/home_assets/home_card2.png
+   - assets/home_assets/delhi.png
+   - assets/home_assets/Banglore.png
+   - assets/home_assets/Hyderabad.png
+   - assets/home_assets/Mumbai.png
+   - assets/news.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
