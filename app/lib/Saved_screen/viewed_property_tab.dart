@@ -1,9 +1,8 @@
-
 import 'package:app/widgets/nearby_property_card.dart';
 import 'package:flutter/material.dart';
 
-class RecentTab extends StatelessWidget {
-  const RecentTab({super.key});
+class ViewedProperty extends StatelessWidget {
+  const ViewedProperty({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class RecentTab extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'My Recent Searched',
+                  'My Recent Viewed',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Container(
@@ -35,10 +34,11 @@ class RecentTab extends StatelessWidget {
             SizedBox(height:5),
           
     ListView.builder(
-  shrinkWrap: true,
-  physics: NeverScrollableScrollPhysics(), 
-  itemCount: 2,
-  itemBuilder: (context, index) {
+      padding: const EdgeInsets.all(16),
+      shrinkWrap: true, 
+            physics: const NeverScrollableScrollPhysics(),
+      itemCount: 3,
+      itemBuilder: (context, index) {
         return NearbyCard();
        },
 ),

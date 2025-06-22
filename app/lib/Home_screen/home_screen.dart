@@ -353,7 +353,7 @@ class ArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: (MediaQuery.of(context).size.width / 2) - 24, // 2 cards in a row with padding
+      width: (MediaQuery.of(context).size.width / 2) - 24, 
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -366,7 +366,7 @@ class ArticleCard extends StatelessWidget {
             child: Image.asset(
               'assets/home_assets/article_home.png', 
               height: 50,
-              width: 50,
+              width: 40,
               fit: BoxFit.fill,
             ),
           ),
