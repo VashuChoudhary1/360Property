@@ -156,35 +156,16 @@ class HomeScreen extends StatelessWidget {
                 ],),
                 const SizedBox(height: 16),
                             Container(
-              padding: const EdgeInsets.all(16),
+              height: 200,
+                  width:470,
               decoration: BoxDecoration(
                 color: Color(0xFFDCECFD),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Home Loans That Fit\nYour Life, Seamlessly.",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 8),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                          ),
-                          child: const Text("Start Your Loan Application"),
-                        ),
-                      ],
-                    ),
+              child: Image.asset(
+                  "assets/home_assets/home_loans.png",
+                  fit:BoxFit.cover
                   ),
-                  const SizedBox(width: 8),
-                  Image.asset('assets/home_loan.png', height: 80,width: 80,),
-                ],
-              ),
             ),
 
             const SizedBox(height: 16),
@@ -233,39 +214,21 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         SizedBox(height:12),
-        Container(
-              padding: const EdgeInsets.all(16),
+         Container(
+              height: 200,
+                  width:470,
               decoration: BoxDecoration(
                 color: Color(0xFFDCECFD),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Register to post your \n Property for Free",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 8),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                          ),
-                          child: const Text("Post Property for Free"),
-                        ),
-                      ],
-                    ),
+              child: Image.asset(
+                  "assets/home_assets/post_property.png",
+                  fit:BoxFit.cover
                   ),
-                  const SizedBox(width: 8),
-                  Image.asset('assets/home_loan.png', height: 80,width: 80,),
-                ],
-              ),
             ),
-            SizedBox(height: 5,),
-            const Text(
+        SizedBox(height: 10,),
+       
+           Text(
           "Explore popular cities",
           style: TextStyle(
             fontSize: 16,
@@ -274,16 +237,17 @@ class HomeScreen extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         SizedBox(
-          height: 90,
+          height: 120,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: const [
+              SizedBox(width: 22),
               CityCircle(image: 'assets/home_assets/delhi.png', name: "Delhi / NCR"),
-              SizedBox(width: 12),
+              SizedBox(width: 22),
               CityCircle(image: 'assets/home_assets/Mumbai.png', name: "Mumbai"),
-              SizedBox(width: 12),
-              CityCircle(image: 'assets/home_assets/Bangalore.png', name: "Bangalore"),
-              SizedBox(width: 12),
+              SizedBox(width: 22),
+              CityCircle(image: 'assets/home_assets/Banglore.png', name: "Bangalore"),
+              SizedBox(width: 22),
               CityCircle(image: 'assets/home_assets/Hyderabad.png', name: "Hyderabad"),
             ],
           ),
@@ -449,15 +413,15 @@ class CityCircle extends StatelessWidget {
         ClipOval(
           child: Image.asset(
             image,
-            height: 60,
-            width: 60,
+            height: 80,
+            width: 80,
             fit: BoxFit.cover,
           ),
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 5),
         Text(
           name,
-          style: const TextStyle(fontSize: 10),
+          style: const TextStyle(fontSize: 12),
           textAlign: TextAlign.center,
         ),
       ],

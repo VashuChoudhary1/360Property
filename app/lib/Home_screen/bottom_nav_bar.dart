@@ -33,7 +33,7 @@ class CustomBottomNavBar extends StatelessWidget {
               isSelected: currentIndex == 1,
               onTap: () => onTabSelected(1),
             ),
-            const SizedBox(width: 30), // Space for FAB
+            const SizedBox(width: 30), 
             BottomNavItem(
               icon: Icons.favorite,
               label: "Saved",

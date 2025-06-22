@@ -1,4 +1,5 @@
 import 'package:app/Home_screen/bottom_nav_bar.dart';
+import 'package:app/Saved_screen/saved_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app/Home_screen/home_screen.dart';
 import 'package:app/News_Screen/news_screen.dart';
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = const [
     HomeScreen(),
     NewsScreen(),
-    Placeholder(), // For "Saved"
+    SavedScreen(),
     Placeholder(), // For "Guide"
   ];
 
