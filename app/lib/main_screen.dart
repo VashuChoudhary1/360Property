@@ -1,3 +1,4 @@
+import 'package:app/Guide_Screen/guide_screen.dart';
 import 'package:app/Home_screen/bottom_nav_bar.dart';
 import 'package:app/Saved_screen/saved_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     NewsScreen(),
     SavedScreen(),
-    Placeholder(), // For "Guide"
+    ContactExpertScreen(),
   ];
 
   void _onTabSelected(int index) {
