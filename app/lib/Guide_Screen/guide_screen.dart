@@ -151,9 +151,9 @@ class _ContactExpertScreenState extends State<ContactExpertScreen> {
                       );
                     }
                   },
-                  child: const Text(
+                  child:  Text(
                     "Submit Details",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color:Colors.white),
                   ),
                 ),
               )
