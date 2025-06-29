@@ -1,3 +1,5 @@
+import 'package:app/calculator/affordability_calculator_screen.dart';
+import 'package:app/widgets/common_widgets.dart';
 import 'package:flutter/material.dart';
 
 class EmiCalculatorScreen extends StatefulWidget {
@@ -28,10 +30,13 @@ class _EmiCalculatorScreenState extends State<EmiCalculatorScreen> {
             inputSlider("Loan Amount", loanAmount, 0, 5000000, (value) {
               setState(() => loanAmount = value);
             }),
+            SizedBox(height: 10,),
             dropdownField("Select Bank (Optional)"),
+            SizedBox(height: 10,),
             inputSlider("Tenure (year)", tenure, 1, 30, (value) {
               setState(() => tenure = value);
             }),
+            SizedBox(height: 10,),
             inputSlider("Interest Rate (p.a)", interestRate, 5, 15, (value) {
               setState(() => interestRate = value);
             }),
@@ -57,19 +62,25 @@ class _EmiCalculatorScreenState extends State<EmiCalculatorScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => AffordabilityCalculatorScreen()),
+                        );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 minimumSize: const Size(double.infinity, 50),
               ),
-              child: const Text("Calculate EMI"),
+              child: const Text("Calculate EMI",
+              style: TextStyle(color: Colors.white),),
             ),
             const SizedBox(height: 20),
-            Image.asset('assets/ads_banner.png', height: 150), // Placeholder ad
+            Image.asset('assets/home_assets/home_loans.png', height: 150), // Placeholder ad
           ],
         ),
       ),
-      bottomNavigationBar: bottomNav(),
     );
   }
 }
