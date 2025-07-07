@@ -94,6 +94,7 @@ flutter:
    - assets/home_assets/article_home.png
    - assets/successful.png
    - assets/home_loan.png
+   - assets/compare_assets/compare_photo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
