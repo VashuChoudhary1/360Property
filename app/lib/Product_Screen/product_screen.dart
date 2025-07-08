@@ -13,11 +13,11 @@ class ProductDetailScreen extends StatelessWidget {
             // Top Image with overlay content
             Stack(
               children: [
-                Image.network(
-                  'https://via.placeholder.com/600x250', // Replace with your image
-                  width: double.infinity,
-                  height: 250,
-                  fit: BoxFit.cover,
+                Image.asset(
+                  "assets/home_assets/house_img.png",
+                  height:250,
+                  width: double.maxFinite,
+                  fit:BoxFit.fill
                 ),
                 Positioned(
                   top: 16,
@@ -129,27 +129,25 @@ class ProductDetailScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           _InfoChip(
-                            icon: Icons.bed_outlined,
-                            title: "3 BHK and 1 baths",
-                          ),
-                          _InfoChip(
-                            icon: Icons.square_foot,
-                            title: "162.0 sq.m.\nsuper area",
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          _InfoChip(
-                            icon: Icons.price_change_outlined,
-                            title: "3.4 Lac\nprice per sq.m.",
-                          ),
-                          _InfoChip(
-                            icon: Icons.home_work_outlined,
-                            title: "1 Year Old\nProperty",
-                          ),
+      imagePath: "assets/product_assets/img1.png",
+      title: "3 BHK and 1 baths",
+      backgroundColor: Color(0xFFC7D4FD),
+    ),
+    _InfoChip(
+      imagePath: "assets/product_assets/img2.png",
+      title: "162.0 sq.m.\nsuper area",
+      backgroundColor: Color(0xFFC7FFCE),
+    ),
+    _InfoChip(
+      imagePath: "assets/product_assets/img3.png",
+      title: "3.4 Lac\nprice per sq.m.",
+      backgroundColor: Color(0xFFF3FFA1),
+    ),
+    _InfoChip(
+      imagePath: "assets/product_assets/img4.png",
+      title: "1 Year Old\nProperty",
+      backgroundColor: Color(0xFFFFD9DA),
+    ),
                         ],
                       ),
 
@@ -181,6 +179,10 @@ class ProductDetailScreen extends StatelessWidget {
                           children: [
                             Text("Property Highlights", style: TextStyle(fontWeight: FontWeight.bold)),
                             SizedBox(height: 8),
+                            _highlightChip(icon_img: "assets/product_assets/location_icon.png",title: "Parking",),
+                            _highlightChip(icon_img: "assets/product_assets/elevator_icon.png",title: "Elevator",),
+                            _highlightChip(icon_img: "assets/product_assets/garden_icon.png",title: "Garden",),
+                            _highlightChip(icon_img: "assets/product_assets/heating_icon.png",title: "Heating",),
                             Text("✔ Parking"),
                             Text("✔ Elevator"),
                             Text("✔ Garden"),
@@ -264,30 +266,54 @@ class ProductDetailScreen extends StatelessWidget {
 }
 
 class _InfoChip extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String title;
+  final Color backgroundColor;
 
-  const _InfoChip({required this.icon, required this.title});
+  const _InfoChip({
+    required this.imagePath,
+    required this.title,
+    required this.backgroundColor,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.42,
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Color(0xFFF9F9F9),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade300),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.blue),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(title, style: const TextStyle(fontSize: 13)),
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 22,
+          backgroundColor: backgroundColor,
+          child: Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Image.asset(imagePath, fit: BoxFit.contain),
           ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 12),
+        ),
+      ],
+    );
+  }
+}
+class _highlightChip extends StatelessWidget{
+  final String icon_img;
+  final String  title;
+  const _highlightChip({
+    required this.icon_img,
+    required this.title
+  });
+
+  @override
+  Widget build(BuildContext context){
+    return Row(
+      children: [
+        Image.asset(icon_img,height: 8,width: 8,fit: BoxFit.cover,),
+        SizedBox(width: 5,),
+        Text(title)
+      ],
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:app/Property_Comparison/add_to_compare_sheet.dart';
 import 'package:flutter/material.dart';
 
 class ComparePropertyScreen extends StatelessWidget {
-  const ComparePropertyScreen({Key? key}) : super(key: key);
+  const ComparePropertyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +100,7 @@ class ComparePropertyScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children:  [
-                Container(
+                SizedBox(
                   height:80,
                   child: Image.asset("assets/compare_assets/compare_photo.png",fit: BoxFit.cover,),),
                 SizedBox(height: 6),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AddToCompareSheet extends StatelessWidget {
-  const AddToCompareSheet({Key? key}) : super(key: key);
+  const AddToCompareSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

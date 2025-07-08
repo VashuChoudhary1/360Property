@@ -95,6 +95,14 @@ flutter:
    - assets/successful.png
    - assets/home_loan.png
    - assets/compare_assets/compare_photo.png
+   - assets/product_assets/img1.png
+   - assets/product_assets/img2.png
+   - assets/product_assets/img3.png
+   - assets/product_assets/img4.png
+   - assets/product_assets/location_icon.png
+   - assets/product_assets/elevator_icon.png
+   - assets/product_assets/garden_icon.png
+   - assets/product_assets/heating_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

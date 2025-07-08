@@ -1,4 +1,3 @@
-import 'package:app/Home_screen/bottom_nav_bar.dart';
 import 'package:app/Home_screen/home_card.dart';
 import 'package:app/Home_screen/nearby_property.dart';
 import 'package:app/Home_screen/property_card.dart';

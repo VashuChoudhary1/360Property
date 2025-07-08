@@ -35,7 +35,7 @@ class _HomeLoanStep4State extends State<HomeLoanStep4> {
                     ],
                   ),
                   const SizedBox(height: 10,),
-                  Container(
+                  SizedBox(
                     height: 150,
                     width: 150,
                     child: Image.asset("assets/home_loan.png")
