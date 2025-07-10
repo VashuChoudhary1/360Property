@@ -13,12 +13,8 @@ class ProductDetailScreen extends StatelessWidget {
             // Top Image with overlay content
             Stack(
               children: [
-                Image.asset(
-                  "assets/home_assets/house_img.png",
-                  height:250,
-                  width: double.maxFinite,
-                  fit:BoxFit.fill
-                ),
+                Image.asset("assets/home_assets/house_img.png",
+                    height: 250, width: double.maxFinite, fit: BoxFit.fill),
                 Positioned(
                   top: 16,
                   left: 16,
@@ -48,7 +44,8 @@ class ProductDetailScreen extends StatelessWidget {
                   bottom: 12,
                   left: 16,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(6),
@@ -57,7 +54,8 @@ class ProductDetailScreen extends StatelessWidget {
                       children: [
                         Icon(Icons.location_on, size: 14, color: Colors.red),
                         SizedBox(width: 4),
-                        Text("Sector 36, Noida", style: TextStyle(fontSize: 12)),
+                        Text("Sector 36, Noida",
+                            style: TextStyle(fontSize: 12)),
                       ],
                     ),
                   ),
@@ -66,12 +64,14 @@ class ProductDetailScreen extends StatelessWidget {
                   bottom: 12,
                   right: 16,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    child: const Text("See 3D View on Map", style: TextStyle(color: Colors.white, fontSize: 10)),
+                    child: const Text("See 3D View on Map",
+                        style: TextStyle(color: Colors.white, fontSize: 10)),
                   ),
                 ),
               ],
@@ -94,17 +94,22 @@ class ProductDetailScreen extends StatelessWidget {
                         children: [
                           _buildTag("Villa", Colors.red.shade100, Colors.red),
                           const SizedBox(width: 8),
-                          _buildTag("Ready To Move", Colors.red.shade100, Colors.red),
+                          _buildTag(
+                              "Ready To Move", Colors.red.shade100, Colors.red),
                           const SizedBox(width: 8),
-                          _buildTag("Furnished", Colors.red.shade100, Colors.red),
+                          _buildTag(
+                              "Furnished", Colors.red.shade100, Colors.red),
                         ],
                       ),
 
                       const SizedBox(height: 8),
 
                       // Price and description
-                      const Text("₹ 47,00,000", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                      const Text("2,3,4 BHK flats & Apartments for rent and sale"),
+                      const Text("₹ 47,00,000",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold)),
+                      const Text(
+                          "2,3,4 BHK flats & Apartments for rent and sale"),
 
                       const SizedBox(height: 16),
 
@@ -129,32 +134,34 @@ class ProductDetailScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           _InfoChip(
-      imagePath: "assets/product_assets/img1.png",
-      title: "3 BHK and 1 baths",
-      backgroundColor: Color(0xFFC7D4FD),
-    ),
-    _InfoChip(
-      imagePath: "assets/product_assets/img2.png",
-      title: "162.0 sq.m.\nsuper area",
-      backgroundColor: Color(0xFFC7FFCE),
-    ),
-    _InfoChip(
-      imagePath: "assets/product_assets/img3.png",
-      title: "3.4 Lac\nprice per sq.m.",
-      backgroundColor: Color(0xFFF3FFA1),
-    ),
-    _InfoChip(
-      imagePath: "assets/product_assets/img4.png",
-      title: "1 Year Old\nProperty",
-      backgroundColor: Color(0xFFFFD9DA),
-    ),
+                            imagePath: "assets/product_assets/img1.png",
+                            title: "3 BHK and 1 baths",
+                            backgroundColor: Color(0xFFC7D4FD),
+                          ),
+                          _InfoChip(
+                            imagePath: "assets/product_assets/img2.png",
+                            title: "162.0 sq.m.\nsuper area",
+                            backgroundColor: Color(0xFFC7FFCE),
+                          ),
+                          _InfoChip(
+                            imagePath: "assets/product_assets/img3.png",
+                            title: "3.4 Lac\nprice per sq.m.",
+                            backgroundColor: Color(0xFFF3FFA1),
+                          ),
+                          _InfoChip(
+                            imagePath: "assets/product_assets/img4.png",
+                            title: "1 Year Old\nProperty",
+                            backgroundColor: Color(0xFFFFD9DA),
+                          ),
                         ],
                       ),
 
                       const SizedBox(height: 16),
 
                       // About Property
-                      const Text("About Property", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      const Text("About Property",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
                       const SizedBox(height: 6),
                       const Text(
                         "Lorem ipsum dolor sit amet consectetur. Lorem accumsan faucibus donec nulla augue...",
@@ -167,7 +174,6 @@ class ProductDetailScreen extends StatelessWidget {
 
                       const SizedBox(height: 16),
 
-                      // Property Highlights
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -177,21 +183,64 @@ class ProductDetailScreen extends StatelessWidget {
                         child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Property Highlights", style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text("Property Highlights",
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                             SizedBox(height: 8),
-                            _highlightChip(icon_img: "assets/product_assets/location_icon.png",title: "Parking",),
-                            _highlightChip(icon_img: "assets/product_assets/elevator_icon.png",title: "Elevator",),
-                            _highlightChip(icon_img: "assets/product_assets/garden_icon.png",title: "Garden",),
-                            _highlightChip(icon_img: "assets/product_assets/heating_icon.png",title: "Heating",),
-                            Text("✔ Parking"),
-                            Text("✔ Elevator"),
-                            Text("✔ Garden"),
-                            Text("✔ Heating"),
+                            _highlightChip(
+                              icon_img:
+                                  "assets/product_assets/location_icon.png",
+                              title: "Parking",
+                            ),
+                            _highlightChip(
+                              icon_img:
+                                  "assets/product_assets/elevator_icon.png",
+                              title: "Elevator",
+                            ),
+                            _highlightChip(
+                              icon_img: "assets/product_assets/garden_icon.png",
+                              title: "Garden",
+                            ),
+                            _highlightChip(
+                              icon_img:
+                                  "assets/product_assets/heating_icon.png",
+                              title: "Heating",
+                            ),
                           ],
                         ),
                       ),
 
-                      const SizedBox(height: 70),
+                      const SizedBox(height: 10),
+                      const Text(
+                "Property Details",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(height: 16),
+              _detailRow("Layout", "1 BHK, 1 Baths,\nServant Room"),
+              _detailRow("Ownership", "-----"),
+              _detailRow("Super Area", "1243.75 sq.ft."),
+              _detailRow("Overlooking", "Others"),
+              _detailRow("Width of facing road", "39.4 ft"),
+              _detailRow("Flooring", "Cement"),
+              _detailRow("Water Source", "Municipal corporation"),
+              _detailRow("Furnishing", "Furnished"),
+              _detailRow("Facing", "East"),
+              const SizedBox(height: 24),
+
+               const Text(
+                "Your Visual Walkthrough Starts Here.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const Text(
+                "Photo Tours Made Easy.",
+                style: TextStyle(fontSize: 13, color: Colors.grey),
+              ),
+              const SizedBox(height: 16),
                     ],
                   ),
                 ),
@@ -210,14 +259,16 @@ class ProductDetailScreen extends StatelessWidget {
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.red),
                       ),
-                      child: const Text("View Number", style: TextStyle(color: Colors.red)),
+                      child: const Text("View Number",
+                          style: TextStyle(color: Colors.red)),
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                      style:
+                          ElevatedButton.styleFrom(backgroundColor: Colors.red),
                       child: const Text("Contact Seller"),
                     ),
                   ),
@@ -298,22 +349,49 @@ class _InfoChip extends StatelessWidget {
     );
   }
 }
-class _highlightChip extends StatelessWidget{
+
+class _highlightChip extends StatelessWidget {
   final String icon_img;
-  final String  title;
-  const _highlightChip({
-    required this.icon_img,
-    required this.title
-  });
+  final String title;
+  const _highlightChip({required this.icon_img, required this.title});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(icon_img,height: 8,width: 8,fit: BoxFit.cover,),
-        SizedBox(width: 5,),
-        Text(title)
+        Image.asset(
+          icon_img,
+          height: 15,
+          width: 15,
+          fit: BoxFit.cover,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text(title, style: TextStyle(fontSize: 12))
       ],
     );
   }
+}
+
+Widget _detailRow(String label, String value) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 12),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 130,
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 14, color: Colors.black),
+          ),
+        ),
+           SizedBox(width: 8,),
+          Expanded(child: Text(value,
+          style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w600),),)
+      
+      ],
+    ),
+  );
 }
