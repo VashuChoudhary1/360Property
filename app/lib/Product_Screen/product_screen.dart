@@ -124,22 +124,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           _InfoChip(
-                            imagePath: "assets/product_assets/img1.png",
+                            imagePath: "assets/home_assets/house_img.png",
                             title: "3 BHK and 1 baths",
                             backgroundColor: Color(0xFFC7D4FD),
                           ),
                           _InfoChip(
-                            imagePath: "assets/product_assets/img2.png",
+                            imagePath: "assets/home_assets/house_img.png",
                             title: "162.0 sq.m.\nsuper area",
                             backgroundColor: Color(0xFFC7FFCE),
                           ),
                           _InfoChip(
-                            imagePath: "assets/product_assets/img3.png",
+                            imagePath: "assets/home_assets/house_img.png",
                             title: "3.4 Lac\nprice per sq.m.",
                             backgroundColor: Color(0xFFF3FFA1),
                           ),
                           _InfoChip(
-                            imagePath: "assets/product_assets/img4.png",
+                            imagePath: "assets/home_assets/house_img.png",
                             title: "1 Year Old\nProperty",
                             backgroundColor: Color(0xFFFFD9DA),
                           ),
@@ -165,10 +165,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           children: [
                             Text("Property Highlights", style: TextStyle(fontWeight: FontWeight.bold)),
                             SizedBox(height: 8),
-                            _highlightChip(icon_img: "assets/product_assets/location_icon.png", title: "Parking"),
-                            _highlightChip(icon_img: "assets/product_assets/elevator_icon.png", title: "Elevator"),
-                            _highlightChip(icon_img: "assets/product_assets/garden_icon.png", title: "Garden"),
-                            _highlightChip(icon_img: "assets/product_assets/heating_icon.png", title: "Heating"),
+                            _highlightChip(icon_img: "assets/home_assets/house_img.png", title: "Parking"),
+                            _highlightChip(icon_img: "assets/home_assets/house_img.png", title: "Elevator"),
+                            _highlightChip(icon_img: "assets/home_assets/house_img.png", title: "Garden"),
+                            _highlightChip(icon_img: "assets/home_assets/house_img.png", title: "Heating"),
                           ],
                         ),
                       ),
@@ -190,7 +190,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       const SizedBox(height: 16),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image.asset("assets/property_main.jpg", fit: BoxFit.cover),
+                        child: Image.asset("assets/home_assets/house_img.png", fit: BoxFit.cover),
                       ),
                       const SizedBox(height: 12),
                       SizedBox(
@@ -204,7 +204,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 image: const DecorationImage(
-                                  image: AssetImage("assets/property_thumb.jpg"),
+                                  image: AssetImage("assets/home_assets/house_img.png"),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -217,7 +217,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       const SizedBox(height: 8),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image.asset("assets/map_placeholder.png"),
+                        child: Image.asset("assets/home_assets/house_img.png"),
                       ),
                       const SizedBox(height: 20),
                       Container(
@@ -231,9 +231,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           children: [
                             Row(
                               children: [
-                                _compareImage("assets/property_thumb.jpg"),
+                                _compareImage("assets/home_assets/house_img.png"),
                                 const SizedBox(width: 8),
-                                _compareImage("assets/property_thumb.jpg", showBorder: true),
+                                _compareImage("assets/home_assets/house_img.png", showBorder: true),
                               ],
                             ),
                             const SizedBox(height: 12),

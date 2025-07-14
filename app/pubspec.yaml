@@ -107,6 +107,7 @@ flutter:
    - assets/home_assets/Calculator1.png
    - assets/home_assets/Calculator2.png
    - assets/home_assets/Calculator3.png
+   - assets/residential.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

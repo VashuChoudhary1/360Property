@@ -3,6 +3,7 @@ import 'package:app/Home_screen/nearby_property.dart';
 import 'package:app/Home_screen/property_card.dart';
 import 'package:app/Product_Screen/product_screen.dart';
 import 'package:app/Profile/profile_screen.dart';
+import 'package:app/Residential_Screen/residential_1.dart';
 import 'package:app/calculator/affordability_calculator_screen.dart';
 import 'package:app/calculator/eligibility_calculator_screen.dart';
 import 'package:app/calculator/emi_calculator_screen.dart';
@@ -116,33 +117,60 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const CategoryButton(
-                        suffixWidget: CircleAvatar(
-                          radius: 10,
-                          backgroundColor: Color(0xFFFF0000),
-                          child: Icon(
-                            Icons.home,
-                            color: Colors.white,
-                            size: 20,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ResidentialSearchScreen(),
+                              ));
+                      },
+                      child: const CategoryButton(
+                          suffixWidget: CircleAvatar(
+                            radius: 10,
+                            backgroundColor: Color(0xFFFF0000),
+                            child: Icon(
+                              Icons.home,
+                              color: Colors.white,
+                              size: 20,
+                            ),
                           ),
-                        ),
-                        title: 'Residential'),
-                    CategoryButton(
-                        suffixWidget: Image.asset(
-                          "assets/home_assets/commercial_icon.png",
-                          width: 20,
-                          height: 20,
-                          fit: BoxFit.fill,
-                        ),
-                        title: 'Commercial'),
-                    CategoryButton(
-                        suffixWidget: Image.asset(
-                          "assets/home_assets/agriculture_icon.png",
-                          width: 20,
-                          height: 20,
-                          fit: BoxFit.fill,
-                        ),
-                        title: 'Agricultural Land'),
+                          title: 'Residential'),
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ResidentialSearchScreen(),
+                              ));
+                      },
+                      child: CategoryButton(
+                          suffixWidget: Image.asset(
+                            "assets/home_assets/commercial_icon.png",
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.fill,
+                          ),
+                          title: 'Commercial'),
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ResidentialSearchScreen(),
+                              ));
+                      },
+                      child: CategoryButton(
+                          suffixWidget: Image.asset(
+                            "assets/home_assets/agriculture_icon.png",
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.fill,
+                          ),
+                          title: 'Agricultural Land'),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),

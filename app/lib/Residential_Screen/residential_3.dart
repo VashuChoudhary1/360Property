@@ -54,7 +54,7 @@ class ResidentialListingScreen extends StatelessWidget {
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(12)),
                 child: Image.asset(
-                  "assets/property_main.jpg",
+                  "assets/residential.png",
                   height: 180,
                   width: double.infinity,
                   fit: BoxFit.cover,
