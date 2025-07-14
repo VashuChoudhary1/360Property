@@ -1,3 +1,4 @@
+import 'package:app/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class AgentSignupScreen extends StatefulWidget {
@@ -248,12 +249,12 @@ class _AgentSignupScreenState extends State<AgentSignupScreen> {
                           width: double.infinity,
                           height: 50,
                            child: ElevatedButton(
-                        onPressed: isTermsAccepted
-                            ? () {
-                                print('submit');
-                                
-                              }
-                            : null,
+                        onPressed: (){
+                          Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>  MainScreen()));
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFF0000),
                           shape: RoundedRectangleBorder(

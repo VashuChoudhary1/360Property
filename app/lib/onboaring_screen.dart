@@ -1,3 +1,4 @@
+import 'package:app/Login_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -107,7 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const NextScreen()));
+                              builder: (context) =>  LoginScreen()));
                     } else {
                       _controller.nextPage(
                         duration: const Duration(milliseconds: 500),
@@ -152,17 +153,6 @@ class OnboardPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class NextScreen extends StatelessWidget {
-  const NextScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Next Screen')),
     );
   }
 }

@@ -103,6 +103,10 @@ flutter:
    - assets/product_assets/elevator_icon.png
    - assets/product_assets/garden_icon.png
    - assets/product_assets/heating_icon.png
+   - assets/home_assets/Calculator.png
+   - assets/home_assets/Calculator1.png
+   - assets/home_assets/Calculator2.png
+   - assets/home_assets/Calculator3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

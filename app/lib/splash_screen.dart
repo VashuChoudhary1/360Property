@@ -1,3 +1,4 @@
+import 'package:app/onboaring_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -73,11 +74,20 @@ class _SplashScreenState extends State<SplashScreen>
         houseController.forward();
       });
 
-      houseController.addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          logo360Controller.forward();
-        }
+houseController.addStatusListener((status) {
+  if (status == AnimationStatus.completed) {
+    logo360Controller.forward().whenComplete(() {
+      Future.delayed(const Duration(seconds: 1), () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const OnboardingScreen(), 
+          ),
+        );
       });
+    });
+  }
+});
+
 
       setState(() {});
     });

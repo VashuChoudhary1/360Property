@@ -1,3 +1,4 @@
+import 'package:app/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -124,6 +125,13 @@ class VerifyScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
+                          Navigator.push(
+                         context,
+                         MaterialPageRoute(
+                        builder: (context) => const MainScreen(),
+            ),
+          );
+
                         },
                         child: Text(
                           'Verify',
