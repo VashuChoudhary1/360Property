@@ -1,5 +1,6 @@
 import 'package:app/Guide_Screen/guide_screen.dart';
 import 'package:app/Home_screen/bottom_nav_bar.dart';
+import 'package:app/Post_property/post_property1.dart';
 import 'package:app/Saved_screen/saved_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app/Home_screen/home_screen.dart';
@@ -38,7 +39,10 @@ class _MainScreenState extends State<MainScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Handle FAB action here
+           Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AddBasicDetailsScreen()),
+            );
         },
         backgroundColor: Colors.red,
         child: const Icon(Icons.add),

@@ -1,6 +1,8 @@
 import 'package:app/Home_screen/home_card.dart';
 import 'package:app/Home_screen/nearby_property.dart';
 import 'package:app/Home_screen/property_card.dart';
+import 'package:app/Loan_Screen/home_loan_step1.dart';
+import 'package:app/Post_property/post_property1.dart';
 import 'package:app/Product_Screen/product_screen.dart';
 import 'package:app/Profile/profile_screen.dart';
 import 'package:app/Residential_Screen/residential_1.dart';
@@ -61,11 +63,19 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     LocationButton(),
-                    SizedBox(
-                      width: 150,
-                      child: Image.asset(
-                        "assets/home_assets/post_icon.png",
-                        fit: BoxFit.fill,
+                    GestureDetector(
+                      onTap:(){
+                         Navigator.push(
+                         context,
+                        MaterialPageRoute(builder: (_) => const AddBasicDetailsScreen()),
+                        );
+                      },
+                      child: SizedBox(
+                        width: 150,
+                        child: Image.asset(
+                          "assets/home_assets/post_icon.png",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     )
                   ],
@@ -84,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide.none,
+                            
                           ),
                           suffixIcon: const Icon(
                             Icons.search,
@@ -246,15 +256,23 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
-                Container(
-                  height: 200,
-                  width: 470,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFDCECFD),
-                    borderRadius: BorderRadius.circular(12),
+                GestureDetector(
+                  onTap:(){
+                     Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const HomeLoanStep1()),
+            );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: 470,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFDCECFD),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Image.asset("assets/home_assets/home_loans.png",
+                        fit: BoxFit.cover),
                   ),
-                  child: Image.asset("assets/home_assets/home_loans.png",
-                      fit: BoxFit.cover),
                 ),
 
                 const SizedBox(height: 16),
@@ -303,15 +321,23 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 12),
-                Container(
-                  height: 200,
-                  width: 470,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFDCECFD),
-                    borderRadius: BorderRadius.circular(12),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AddBasicDetailsScreen()),
+            );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: 470,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFDCECFD),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Image.asset("assets/home_assets/post_property.png",
+                        fit: BoxFit.cover),
                   ),
-                  child: Image.asset("assets/home_assets/post_property.png",
-                      fit: BoxFit.cover),
                 ),
                 SizedBox(
                   height: 10,
@@ -431,7 +457,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Color(0xFFE0F7FA), // light blue background
+                    color: Color(0xFFE0F7FA), 
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Column(
