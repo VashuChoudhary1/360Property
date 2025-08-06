@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:path/path.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -8,9 +13,17 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  // Only needed if role is Agent or Builder
+  final agentTypeController = TextEditingController();
+  final addressController = TextEditingController();
+  final localityController = TextEditingController();
+  final pinCodeController = TextEditingController();
+  File? addressProofFile;
 
   String selectedRole = 'Owner'; // Default
   bool isTermsAccepted = false;
@@ -26,6 +39,54 @@ class _SignupScreenState extends State<SignupScreen> {
         borderSide: BorderSide(color: Colors.red, width: 2),
       ),
     );
+  }
+  Future<void> pickAddressProofFile() async {
+    FilePickerResult? result =
+        await FilePicker.platform.pickFiles(type: FileType.image);
+    if (result != null) {
+      setState(() {
+        addressProofFile = File(result.files.single.path!);
+      });
+    }
+  }
+  Future<void> submitSignupForm(BuildContext context) async {
+    var uri = Uri.parse(" http://localhost:3000/api/signup"); 
+
+    var request = http.MultipartRequest("POST", uri);
+    request.fields['username'] = nameController.text.trim();
+    request.fields['email'] = emailController.text.trim();
+    request.fields['password'] = passwordController.text.trim();
+    request.fields['phoneNumber'] = phoneController.text.trim();
+    request.fields['countryCode'] = '+91';
+    request.fields['role'] = selectedRole;
+
+    if (selectedRole == 'Agent' || selectedRole == 'Builder') {
+      request.fields['agentType'] = agentTypeController.text.trim();
+      request.fields['fullAddress'] = addressController.text.trim();
+      request.fields['locality'] = localityController.text.trim();
+      request.fields['pinCode'] = pinCodeController.text.trim();
+      if (addressProofFile != null) {
+        request.files.add(await http.MultipartFile.fromPath(
+          'addressProof',
+          addressProofFile!.path,
+          filename: basename(addressProofFile!.path),
+        ));
+      }
+    }
+
+    final response = await request.send();
+
+    if (response.statusCode == 200) {
+      print('Signup successful!');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Signup Successful!")),
+      );
+    } else {
+      print('Signup failed: ${response.statusCode}');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Signup failed: ${response.statusCode}")),
+      );
+    }
   }
 
   @override
@@ -156,6 +217,40 @@ class _SignupScreenState extends State<SignupScreen> {
                       }).toList(),
                     ),
                     const SizedBox(height: 20),
+                    if (selectedRole == 'Agent' || selectedRole == 'Builder') ...[
+                          const Text('Agent Type', style: TextStyle(color: Colors.red)),
+                          TextField(
+                            controller: agentTypeController,
+                            decoration: customInputDecoration('E.g. Real Estate Agent'),
+                          ),
+                          const SizedBox(height: 16),
+                          const Text('Full Address', style: TextStyle(color: Colors.red)),
+                          TextField(
+                            controller: addressController,
+                            decoration: customInputDecoration('Street, City'),
+                          ),
+                          const SizedBox(height: 16),
+                          const Text('Locality', style: TextStyle(color: Colors.red)),
+                          TextField(
+                            controller: localityController,
+                            decoration: customInputDecoration('Locality'),
+                             ),
+                          const SizedBox(height: 16),
+                          const Text('PIN Code', style: TextStyle(color: Colors.red)),
+                          TextField(
+                            controller: pinCodeController,
+                            decoration: customInputDecoration('PIN Code'),
+                          ),
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: pickAddressProofFile,
+                            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                            child: Text(addressProofFile == null
+                                ? "Upload Address Proof"
+                                : "Address Proof Selected "),
+                          ),
+                        ],
+                        const SizedBox(height: 20),
                     Row(
                       children: [
                         Checkbox(
@@ -193,14 +288,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       width: double.infinity,
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: isTermsAccepted
-                            ? () {
-                                print('Name: ${nameController.text}');
-                                print('Email: ${emailController.text}');
-                                print('Phone: ${phoneController.text}');
-                                print('Role: $selectedRole');
-                              }
-                            : null,
+                        onPressed: isTermsAccepted ?(){ submitSignupForm(context); }: null,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFF0000),
                           shape: RoundedRectangleBorder(
