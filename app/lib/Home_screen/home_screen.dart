@@ -16,6 +16,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -29,16 +32,16 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: 30,
-                      width: 110,
+                      height: screenHeight * (30 /800),
+                      width: screenWidth * (124/360),
                       child: Image.asset(
                         "assets/home_assets/home_icon.png",
                         fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(
-                        height: 60,
-                        width: 60,
+                        height: screenHeight * (60 /800),
+                        width: screenWidth * (60/360),
                         child:
                             GestureDetector(
                                onTap: () {
