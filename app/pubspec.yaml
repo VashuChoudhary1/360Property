@@ -69,6 +69,7 @@ flutter:
    - assets/house.png
    - assets/village.png
    - assets/login_bg.png
+   - assets/login_icon.png
    - assets/Whatsapp.png
    - assets/devicon_google.png
    - assets/sign_up.png

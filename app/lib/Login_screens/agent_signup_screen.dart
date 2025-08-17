@@ -50,15 +50,15 @@ class _AgentSignupScreenState extends State<AgentSignupScreen> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF06112D),
-              Color(0xFFFFA9A9),
-            ],
-            stops: [0.02, 0.88],
-          ),
+                gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color(0xFF06112D),
+          Color(0xFFFFA9A9),
+        ],
+        stops: [0.024, 0.8798],
+      ),
         ),
         child: SafeArea(
           child: Column(

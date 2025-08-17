@@ -14,6 +14,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+
   final TextEditingController phoneController = TextEditingController();
   bool isLoading = false;
 
@@ -72,150 +74,271 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 37, 33, 33),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 4,
-              child: SizedBox(
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/login_bg.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
+      body: Container(
+          width: double.infinity,
+    height: double.infinity,
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color(0xFF06112D),
+          Color(0xFFFFA9A9),
+        ],
+        stops: [0.024, 0.8798],
+      ),
+    ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+          flex: 4,
+          child: Container(
+            width: double.infinity,
+            
+            child: Stack(
+        children: [
+          Positioned(
+             top: screenHeight * (55 / 800),
+             left: screenWidth * (17 / 360),
+             child: Opacity(
+             opacity: 1, 
+             child: Image.asset(
+                   'assets/login_icon.png', 
+              width: screenWidth * (123.56 / 360),
+              height: screenHeight * (15 / 800),
+              fit: BoxFit.contain,
+             ),
             ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 4,
-                      blurRadius: 8,
-                      offset: const Offset(0, -3),
-                    )
-                  ],
+          ),
+          Positioned(
+            top: screenHeight* (159.75 / 800),
+            left: screenWidth* (50 / 360),
+            child: Opacity(
+              opacity: 1,
+              child: Image.asset(
+                  'assets/login_bg.png',
+                 width: screenWidth * (300.77 / 360),
+                 height: screenHeight* (300.25 / 800),
+                 fit: BoxFit.contain,   
                 ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Login to proceed',
-                        style: GoogleFonts.poppins(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
-                        ),
+              
+            ),
+          ),
+          
+        ],
+            ),
+          ),
+        ),
+        
+              Expanded(
+                flex: 3,
+                child: Positioned(
+                   top: screenHeight * (394 / 800),
+                  child: Container(
+                    width: screenWidth,
+                    height: screenHeight * (450 / 800),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(32),
+                        topRight: Radius.circular(32),
                       ),
-                      const SizedBox(height: 12),
-                      Text(
-                        'Phone Number',
-                        style: GoogleFonts.poppins(fontSize: 14),
-                      ),
-                      const SizedBox(height: 8),
-                      CustomTextField(
-                        hintText: '+91 Phone Number',
-                        keyboardType: TextInputType.phone,
-                        controller: phoneController,
-                      ),
-                      const SizedBox(height: 20),
-
-                      // Login Button
-                      SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFFF0000),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          onPressed: isLoading ? null : handleLogin,
-                          child: isLoading
-                              ? const CircularProgressIndicator(color: Colors.white)
-                              : Text(
-                                  'Login',
-                                  style: GoogleFonts.poppins(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                  ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 4,
+                          blurRadius: 8,
+                          offset: const Offset(0, -3),
+                        )
+                      ],
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                          child: Column(
+                            children: [
+                              Text(
+                                'Login to proceed',
+                                style: GoogleFonts.poppins(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
                                 ),
-                        ),
-                      ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                'Save, Connect, Discover: Your login Perks await!',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                  fontSize: 12,
+                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                              ),
+                              const SizedBox(height: 20),
+                          
+                              Text(
+                          'Phone Number',
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Colors.red, // red label
+                          ),
+                              ),
+                              const SizedBox(height: 8),
+                          
+                              TextField(
+                          controller: phoneController,
+                          keyboardType: TextInputType.phone,
+                          decoration: const InputDecoration(
+                            prefixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                            const Text(
+                            "+91",
+                            style: TextStyle(
+                           color: Colors.black,
+                           fontSize: 24,
+                           fontWeight: FontWeight.w500,
+                           ),
+                           ),
+                         const SizedBox(width: 2),
+                         const Icon(Icons.arrow_drop_down, color: Colors.black, size: 24),  
+                               ],
+                       ),
 
-                      const SizedBox(height: 12),
-
-                      Center(
-                        child: Text(
-                          'Or sign in with',
-                          style: GoogleFonts.poppins(fontSize: 12),
-                        ),
-                      ),
-
-                      const SizedBox(height: 8),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/devicon_google.png', width: 40),
-                          const SizedBox(width: 20),
-                          Image.asset('assets/Whatsapp.png', width: 40),
-                        ],
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      Center(
-                        child: Row(
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.red, width: 2),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.red, width: 2),
+                            ),
+                            hintText: "Phone Number",
+                          ),
+                              ),
+                          
+                              const SizedBox(height: 24),
+                          
+                              // Login Button
+                              SizedBox(
+                          width: screenWidth * (342/360),
+                          height: screenHeight * (50/800),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFFF0000),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: isLoading ? null : handleLogin,
+                            child: isLoading
+                                ? const CircularProgressIndicator(color: Colors.white)
+                                : Text(
+                    'Login',
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                          ),
+                              ),
+                          
+                              const SizedBox(height: 12),
+                          
+                              Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'By clicking above you agree to ',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 10,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              Text("Terms & Conditions",style: GoogleFonts.poppins(
+                                  fontSize: 10,
+                                  color: Colors.red,
+                                ),)
+                            ],
+                          ),
+                              ),
+                          
+                              const SizedBox(height: 16),
+                          
+                              Center(
+                          child: Text(
+                            'Or login with',
+                            style: GoogleFonts.poppins(fontSize: 12),
+                          ),
+                              ),
+                          
+                              const SizedBox(height: 8),
+                          
+                              Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "Don’t have an account?",
-                              style: GoogleFonts.poppins(
-                                color: Colors.grey,
-                                fontSize: 12,
+                            Image.asset('assets/devicon_google.png', width: 40),
+                            const SizedBox(width: 20),
+                            Image.asset('assets/Whatsapp.png', width: 40),
+                          ],
                               ),
-                            ),
-                            const SizedBox(width: 5),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SignupScreen(),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                "Sign Up",
+                          
+                              const SizedBox(height: 16),
+                          
+                              Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Don’t have an account?",
                                 style: GoogleFonts.poppins(
-                                  color: const Color(0xFFFF0000),
-                                  fontSize: 12,
+                  color: Colors.grey,
+                  fontSize: 12,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                              const SizedBox(width: 5),
+                              GestureDetector(
+                                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignupScreen(),
+                    ),
+                  );
+                                },
+                                child: Text(
+                  "SignUp",
+                  style: GoogleFonts.poppins(
+                    color: Colors.red ,// 
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                              ),
+                            ],
+                          ),
+                          
+                    ),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
