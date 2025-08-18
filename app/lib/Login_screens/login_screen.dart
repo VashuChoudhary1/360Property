@@ -1,7 +1,7 @@
 import 'package:app/Home_screen/home_screen.dart';
 import 'package:app/Login_screens/signup_screen.dart';
 // Note: You will need to create a home screen to navigate to after login.
-// import 'package:app/screens/home_screen.dart';
+//import 'package:app/screens/home_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -290,21 +290,21 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Stack(
         children: [
           Positioned(
-             top: screenHeight * (55 / 800),
-             left: screenWidth * (17 / 360),
+             top: screenHeight * (30 / 800),
+             left: screenWidth * (15 / 360),
              child: Opacity(
              opacity: 1, 
              child: Image.asset(
                    'assets/login_icon.png', 
               width: screenWidth * (123.56 / 360),
-              height: screenHeight * (15 / 800),
+              height: screenHeight * (20 / 800),
               fit: BoxFit.contain,
              ),
             ),
           ),
           Positioned(
             top: screenHeight* (159.75 / 800),
-            left: screenWidth* (50 / 360),
+            left: screenWidth* (40 / 360),
             child: Opacity(
               opacity: 1,
               child: Image.asset(
@@ -426,8 +426,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            onPressed: isLoading ? null : handleLogin,
-                            child: isLoading
+                            onPressed: _isLoading ? null : _handleLogin,
+                            child: _isLoading
                                 ? const CircularProgressIndicator(color: Colors.white)
                                 : Text(
                     'Login',
