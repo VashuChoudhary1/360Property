@@ -39,6 +39,7 @@ dependencies:
   http: ^1.4.0
   file_picker: ^10.2.1
   path: ^1.9.1
+  dio: 
 
 dev_dependencies:
   flutter_test:
