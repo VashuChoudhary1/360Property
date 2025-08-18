@@ -1,3 +1,4 @@
+import 'package:app/Home_screen/home_screen.dart';
 import 'package:app/Login_screens/signup_screen.dart';
 // Note: You will need to create a home screen to navigate to after login.
 // import 'package:app/screens/home_screen.dart';
@@ -92,7 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
           const SnackBar(content: Text("Login Successful!")),
         );
         // TODO: Navigate to your home screen and save the token
-        // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
       } else {
         scaffoldMessenger.showSnackBar(
           SnackBar(content: Text(response.data['message'] ?? "Login Failed")),

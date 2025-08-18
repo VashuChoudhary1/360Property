@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:app/Home_screen/home_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -272,6 +273,8 @@ class _SignupScreenState extends State<SignupScreen> {
         scaffoldMessenger.showSnackBar(
           const SnackBar(content: Text("Signup Successful!")),
         );
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
       }
     } on DioException catch (e) {
       if (!mounted) return;
